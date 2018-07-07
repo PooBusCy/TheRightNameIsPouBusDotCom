@@ -6,8 +6,25 @@
 
 {% block body %}
 
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class="navbar-nav">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://127.0.0.1:8000/">PooBus</a>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/">Homepage</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="http://127.0.0.1:8000/about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/what-others-say">What Others Say</a>
+            </li>
+        </ul>
+    </nav>
+
     <div class="about-us">
-        <h1>About Us</h1>
+        <h1 class="headline">About Us</h1>
 
     </br>
     <div class="container-fluid">
@@ -17,40 +34,49 @@
                     <img class="card-img-top" src="/images/boy.png" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+                    <h5 class="card-title">Savvas Alexandrou</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh.</p>
+
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="/images/girl.png" alt="Card image cap">
+                <div class="card-img pb-3">
+                    <img class="card-img-top" src="/images/girl.png" alt="Card image cap">
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+                    <h5 class="card-title">Eleni Ioakim</h5></br>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at.</p>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="/images/man.png" alt="Card image cap">
+                <div class="card-img pb-3">
+                    <img class="card-img-top" src="/images/man.png" alt="Card image cap">
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+                    <h5 class="card-title">Christos Ioannou</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget laoreet nibh, et finibus mi.</p>
                 </div>
             </div>
         </div>
 
     </div>
+
+        <h1 class="headline">Why PouBus?</h1>
+        <div class="why-poubus">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum ut est non ullamcorper. Morbi ut convallis purus, eu elementum libero. Ut sit amet venenatis nibh, vel eleifend orci. Nam quis condimentum diam. Sed consectetur porta dolor, et posuere ipsum placerat eget. Maecenas luctus neque nulla, sodales ornare lacus laoreet vitae. Praesent odio velit, imperdiet vel lacus ac, vulputate tristique urna. Nulla eu nisi ut urna feugiat volutpat sed non nisl.</p>
+            <img src="images/shutterstock_245281558.jpg" class="img-thumbnail" alt="Cinque Terre">
+
+        </div>
+
+        </br>
+
+        <h1 class="headline">Our Next Goal</h1>
+        <div class="why-poubus">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum ut est non ullamcorper. Morbi ut convallis purus, eu elementum libero. Ut sit amet venenatis nibh, vel eleifend orci. Nam quis condimentum diam. Sed consectetur porta dolor, et posuere ipsum placerat eget. Maecenas luctus neque nulla, sodales ornare lacus laoreet vitae. Praesent odio velit, imperdiet vel lacus ac, vulputate tristique urna. Nulla eu nisi ut urna feugiat volutpat sed non nisl.</p>
+            <img src="images/nextstep.png" class="img-thumbnail" alt="Cinque Terre">
+
+        </div>
+
     </div>
 
 {% endblock %}
