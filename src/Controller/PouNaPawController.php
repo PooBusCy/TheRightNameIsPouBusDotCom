@@ -26,6 +26,14 @@ class PouNaPawController extends Controller
         return $this->render('pou_na_paw/aboutus.html.twig');
     }
 
+    /**
+     * @Route("/reviews")
+     */
+    public function reviews(){
+        return $this->render('pou_na_paw/reviews.html.twig');
+
+    }
+
     public function getDirections($from, $to)
     {
         // find the nearest bus stop from $from
