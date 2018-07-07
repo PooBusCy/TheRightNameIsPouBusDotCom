@@ -22,7 +22,7 @@ class PouNaPawController extends Controller
      * @Route("/about-us")
      * @return Response
      */
-    public function test(){
+    public function aboutUs(){
         return $this->render('pou_na_paw/aboutus.html.twig');
     }
 
