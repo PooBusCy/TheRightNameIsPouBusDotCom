@@ -2,18 +2,16 @@
 
 namespace App\Controller;
 
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
 
 class PouNaPawController extends Controller
 {
     /**
-     * @Route("/pou/na/paw", name="pou_na_paw")
+     * @Route("/", name="pou_bus_homepage")
      */
-    public function index()
+    public function homepage()
     {
-        return $this->render('pou_na_paw/index.html.twig', [
-            'controller_name' => 'PouNaPawController',
-        ]);
+        return $this->render('pou_na_paw/index.html.twig');
     }
 }
