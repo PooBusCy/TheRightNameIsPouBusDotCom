@@ -6,3 +6,10 @@ div.example-wrapper {
     background: #ffffff;
     padding: 2px 6px;
 }
+
+form.locations{
+    margin: 20px;
+    outline: 4px solid #5bc0de;
+    outline-offset: 15px;
+
+}

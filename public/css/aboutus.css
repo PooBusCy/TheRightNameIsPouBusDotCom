@@ -1,0 +1,12 @@
+div.about-us{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+}
+div.container-fluid{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
