@@ -17,7 +17,7 @@ class PouNaPawController extends Controller
     public function homepage()
     {
         $googlePlaceApiKey = getenv('GOOGLE_PLACE_API_KEY');
-        return $this->render('pou_na_paw/index.html.twig', ['googlePlaceApiKey' => $googlePlaceApiKey]);
+        return $this->render('pou_na_paw/index.html.twig', ['googlePlaceApiKey' => $googlePlaceApiKey, 'steps' => []]);
     }
 
     /**

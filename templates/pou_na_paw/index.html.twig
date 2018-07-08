@@ -11,7 +11,7 @@
     <div class="example-wrapper">
         <h1>Welcome to PouBus!</h1>
         <div id="map"></div>
-        <form class="locations" method="post">
+        <form class="locations" method="post" action="/tziame">
             <div class="form-group">
                 <label>Starting Point</label>
                 <input type="text" class="form-control" name="start" placeholder="Give Starting Point">
@@ -30,7 +30,7 @@
                 <li>Enter your destination point</li>
                 <li>Press Submit</li>
                 <li>A route will be made just for you</li>
-                <li>Don't forget to get your local-shop discount by scanning this QR code <i>enter QR code</i></li>
+                <li>Don't forget to get your local-shop discount by giving this number <b>ANGELHACK2011</b></li>
                 {% for step in steps %}
                     <li>{{ step['html_instructions'] }}</li>
                 {% endfor %}
