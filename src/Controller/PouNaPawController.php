@@ -31,7 +31,6 @@ class PouNaPawController extends Controller
     /**
      * @Route("/tziame")
      * @return Response
-     * @throws \RestClientException
      */
     public function tziame(){
         // @todo remove it
