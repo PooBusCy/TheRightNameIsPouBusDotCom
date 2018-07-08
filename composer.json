@@ -24,6 +24,7 @@
         "symfony/web-server-bundle": "^4.1",
         "symfony/webpack-encore-pack": "*",
         "symfony/yaml": "^4.1",
+        "tcdent/php-restclient": "^0.1.7",
         "twbs/bootstrap": "^4.1"
     },
     "require-dev": {
