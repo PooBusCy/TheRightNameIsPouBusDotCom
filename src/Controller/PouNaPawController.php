@@ -31,27 +31,16 @@ class PouNaPawController extends Controller
 
     /**
      * @Route("/tziame")
+     * @param Request $request
      * @return Response
      */
     public function tziame(Request $request){
         // @todo remove it
-//        $apiKey = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
-//        $endpoint = "https://maps.googleapis.com/";
-//        $origin = "Ledras,+Nicosia";
-//        $destination = "Plateia+Solomou,+Nicosia,+Cyprus";
-//        $mode = "walking";
-//        $navigation_request = "maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}&mode=${mode}";
-//        $api = new RestClient([
-//            'base_url' => $endpoint,
-//            'format' => "json",
-//            // https://dev.twitter.com/docs/auth/application-only-auth
-//            // 'headers' => ['Authorization' => 'Bearer '.OAUTH_BEARER],
-//        ]);
         $origin = $request->request->get('start');
 
         $destination = $request->request->get('end');
 
-        $api_key = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
+        $api_key = getenv('GOOGLE_PLACE_API_KEY');
 
         $t = file_get_contents("https://maps.googleapis.com/maps/api/directions/json?origin=".$origin."&destination=".$destination."&key=".$api_key);
 
@@ -59,38 +48,6 @@ class PouNaPawController extends Controller
 
         $steps = $all['routes'][0]['legs'][0]['steps'];
 
-//        $result = $api->get($navigation_request);
-//        $routes = ((array) $result->decode_response())['routes'];
-//        $routesRoutes = (array) $routes[0];
-//        // var_dump($routesRoutes['legs']);
-//        $legs = (array) $routesRoutes['legs'];
-//        $beforeSteps = (array) $legs[0];
-//        var_dump($beforeSteps['steps']);
-//        $stepsRaw = $beforeSteps['steps'];
-//        $steps = [];
-//        foreach ($stepsRaw as $step) {
-//            $stepInstruction = (string) $step['html_instructions'];
-//            $steps[] = $stepInstruction;
-//        }
-        // var_dump($legs[0]);
-        // json_decode($response, true)
-        // $resultArray = json_decode($result, true);
-//        $resultArray = (array) $result;
-//        // var_dump($resultArray['response']);
-//        $resultBodyArray = (array) json_decode($resultArray['response']);
-//        $legs = (array) $resultBodyArray['routes'][0];
-        // var_dump($legs['legs'][0]);
-  //      $stepsArray = (array) $legs['legs'][0];
-        // var_dump($stepsArray);
-    //    $steps = $legs['legs'][0]['steps'];
-//        $responseHtml = "<ul>";
-//        foreach ($steps as $step) {
-//            $responseHtml = $responseHtml . "<li>" . $step['html_instructions'] . "</li>";
-//        }
-//        $responseHtml = $responseHtml . "</ul>";
-        // $response = new Response($result->response);
-        // $response->headers->set('Content-Type', 'application/json'
-        //);
         return $this->render('pou_na_paw/index.html.twig', ['steps' => $steps]);
     }
 
