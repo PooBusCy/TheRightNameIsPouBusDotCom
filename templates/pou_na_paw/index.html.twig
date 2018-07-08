@@ -18,9 +18,9 @@
             </div>
             <div class="form-group">
                 <label>Destination</label>
-                <input type="text" class="form-control" name="start" placeholder="Give Destination">
+                    <input type="text" class="form-control" name="end" placeholder="Give Destination">
             </div>
-            <button type="submit" class="btn btn-default btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-default btn-primary">Go</button>
         </form>
 
         <form class="locations">
@@ -30,10 +30,15 @@
                 <li>Enter your destination point</li>
                 <li>Press Submit</li>
                 <li>A route will be made just for you</li>
+
+            </ol>
+            <h3>Steps to your destination</h3>
+            <ol>
                 <li>Don't forget to get your local-shop discount by giving this number <b>ANGELHACK2011</b></li>
                 {% for step in steps %}
                     <li>{{ step['html_instructions'] }}</li>
                 {% endfor %}
+                <li>Take the Bus 106 from Solomou Square</li>
             </ol>
         </form>
     </div>

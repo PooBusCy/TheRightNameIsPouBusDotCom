@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\BusStop;
 use App\Repository\BusStopRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use \RestClient;
@@ -32,7 +33,7 @@ class PouNaPawController extends Controller
      * @Route("/tziame")
      * @return Response
      */
-    public function tziame(){
+    public function tziame(Request $request){
         // @todo remove it
 //        $apiKey = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
 //        $endpoint = "https://maps.googleapis.com/";
@@ -46,9 +47,9 @@ class PouNaPawController extends Controller
 //            // https://dev.twitter.com/docs/auth/application-only-auth
 //            // 'headers' => ['Authorization' => 'Bearer '.OAUTH_BEARER],
 //        ]);
-        $origin = "Nicosia,+Cyprus";
+        $origin = $request->request->get('start');
 
-        $destination = "Larnaca,+Cyprus";
+        $destination = $request->request->get('end');
 
         $api_key = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
 
