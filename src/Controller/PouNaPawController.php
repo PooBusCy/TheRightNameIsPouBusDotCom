@@ -35,20 +35,44 @@ class PouNaPawController extends Controller
      */
     public function tziame(){
         // @todo remove it
-        $apiKey = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
-        $endpoint = "https://maps.googleapis.com/";
-        $origin = "Ledras,+Nicosia";
-        $destination = "Plateia+Solomou,+Nicosia,+Cyprus";
-        $mode = "walking";
-        $navigation_request = "maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}&mode=${mode}";
-        $api = new RestClient([
-            'base_url' => $endpoint,
-            'format' => "json",
-            // https://dev.twitter.com/docs/auth/application-only-auth
-            // 'headers' => ['Authorization' => 'Bearer '.OAUTH_BEARER],
-        ]);
-        $result = $api->get($navigation_request);
-        var_dump($result->decode_response());
+//        $apiKey = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
+//        $endpoint = "https://maps.googleapis.com/";
+//        $origin = "Ledras,+Nicosia";
+//        $destination = "Plateia+Solomou,+Nicosia,+Cyprus";
+//        $mode = "walking";
+//        $navigation_request = "maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}&mode=${mode}";
+//        $api = new RestClient([
+//            'base_url' => $endpoint,
+//            'format' => "json",
+//            // https://dev.twitter.com/docs/auth/application-only-auth
+//            // 'headers' => ['Authorization' => 'Bearer '.OAUTH_BEARER],
+//        ]);
+        $origin = "Nicosia,+Cyprus";
+
+        $destination = "Larnaca,+Cyprus";
+
+        $api_key = "AIzaSyC3l5YJo32fjGjdXH6JHZsW5LyFpyz9WHs";
+
+        $t = file_get_contents("https://maps.googleapis.com/maps/api/directions/json?origin=".$origin."&destination=".$destination."&key=".$api_key);
+
+        $all = json_decode($t,true);
+
+        $steps = $all['routes'][0]['legs'][0]['steps'];
+
+//        $result = $api->get($navigation_request);
+//        $routes = ((array) $result->decode_response())['routes'];
+//        $routesRoutes = (array) $routes[0];
+//        // var_dump($routesRoutes['legs']);
+//        $legs = (array) $routesRoutes['legs'];
+//        $beforeSteps = (array) $legs[0];
+//        var_dump($beforeSteps['steps']);
+//        $stepsRaw = $beforeSteps['steps'];
+//        $steps = [];
+//        foreach ($stepsRaw as $step) {
+//            $stepInstruction = (string) $step['html_instructions'];
+//            $steps[] = $stepInstruction;
+//        }
+        // var_dump($legs[0]);
         // json_decode($response, true)
         // $resultArray = json_decode($result, true);
 //        $resultArray = (array) $result;
@@ -67,7 +91,6 @@ class PouNaPawController extends Controller
         // $response = new Response($result->response);
         // $response->headers->set('Content-Type', 'application/json'
         //);
-        $steps = [];
         return $this->render('pou_na_paw/index.html.twig', ['steps' => $steps]);
     }
 
