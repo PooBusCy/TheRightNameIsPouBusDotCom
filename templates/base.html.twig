@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <link rel=icon href=/images/favicon.png sizes="16x16" type="image/png">
     <title>{% block title %}Welcome to PouBus!{% endblock %}</title>
@@ -22,6 +22,7 @@
             g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
         })();
     </script>
+    {% macro is_active(segment) %}{% if craft.request.firstSegment == segment %}active{% endif %}{% endmacro %}
     <!-- End Matomo Code -->
       <style>
           /* Always set the map height explicitly to define the size of the div
@@ -44,14 +45,15 @@
       <li class="navbar-header">
         <a class="navbar-brand" href="{{ app.request.getBaseURL() }}/">PooBus</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item {% if app.request.attributes.get('_route') == 'app_pounapaw_homepage' %}active{% endif %}">
         <a class="nav-link" href="{{ app.request.getBaseURL() }}/">Homepage</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ app.request.getBaseURL() }}/about-us">About Us</a>
+        <a class="nav-link {% if app.request.attributes.get('_route') == 'app_pounapaw_aboutus' %}active{% endif %}"
+           href="{{ app.request.getBaseURL() }}/about-us">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ app.request.getBaseURL() }}/reviews">What Others Say</a>
+        <a class="nav-link {% if app.request.attributes.get('_route') == 'app_pounapaw_reviews' %}active{% endif %}" href="{{ app.request.getBaseURL() }}/reviews">What Others Say</a>
       </li>
     </ul>
   </nav>
