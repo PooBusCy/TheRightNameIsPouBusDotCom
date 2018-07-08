@@ -7,6 +7,23 @@
 
 {% block body %}
 
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class="navbar-nav">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ app.request.getBaseURL() }}/">PooBus</a>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ app.request.getBaseURL() }}/">Homepage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ app.request.getBaseURL() }}/about-us">About Us</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ app.request.getBaseURL() }}/reviews">What Others Say</a>
+            </li>
+        </ul>
+    </nav>
+
     <div class="example-wrapper">
         <h1 class="headline">Reviews</h1>
 
@@ -21,6 +38,7 @@
                                         src="http://demos.themes.guide/bodeo/assets/images/users/m103.jpg" alt="avatar"></a>
                     </div>
                     <div class="comment-content col-md-11 col-sm-10">
+                        <div class="comment-body">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href>http://wwwwww.com</a>
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
