@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <link rel=icon href=/images/favicon.png sizes="16x16" type="image/png">
     <title>{% block title %}Welcome to PouBus!{% endblock %}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+      {% block stylesheets %}{% endblock %}
     <script type="text/javascript">
         var _paq = _paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
@@ -20,9 +23,39 @@
         })();
     </script>
     <!-- End Matomo Code -->
-
+      <style>
+          /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+          #map {
+              height: 100%;
+          }
+          /* Optional: Makes the sample page fill the window. */
+          html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+          }
+      </style>
   </head>
   <body>
+
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="navbar-header">
+        <a class="navbar-brand" href="{{ app.request.getBaseURL() }}/">PooBus</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ app.request.getBaseURL() }}/">Homepage</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ app.request.getBaseURL() }}/about-us">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ app.request.getBaseURL() }}/reviews">What Others Say</a>
+      </li>
+    </ul>
+  </nav>
+
 
   {% block body %}{% endblock %}
   {% block javascripts %}{% endblock %}
