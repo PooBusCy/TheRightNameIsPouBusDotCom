@@ -6,37 +6,41 @@
 
 {% block body %}
 
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-        <ul class="navbar-nav">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{{ app.request.getBaseURL() }}/">PooBus</a>
-            </div>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ app.request.getBaseURL() }}/">Homepage</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ app.request.getBaseURL() }}/about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ app.request.getBaseURL() }}/reviews">What Others Say</a>
-            </li>
-        </ul>
-    </nav>
+    <div id="mapdiv"></div>
 
     <div class="example-wrapper">
-        <h1>Welcome to PouBus!</h1></br>
-
-
-        <form class="locations" action="locations.php" method="post">
+        <h1>Welcome to PouBus!</h1>
+        <div id="map"></div>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 8
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ googlePlaceApiKey }}&callback=initMap"
+                async defer></script>
+        <form class="locations" method="post">
             <div class="form-group">
                 <label>Starting Point</label>
-                <input type="text" class="form-control"name="start" placeholder="Give Starting Point">
+                <input type="text" class="form-control" name="start" placeholder="Give Starting Point">
             </div>
             <div class="form-group">
                 <label>Destination</label>
-                <input type="text" class="form-control"name="start" placeholder="Give Destination">
+                <input type="text" class="form-control" name="start" placeholder="Give Destination">
             </div>
             <button type="submit" class="btn btn-default btn-primary">Submit</button>
+        </form>
+
+        <form class="locations">
+            <h3>Direction</h3>
+            <ol>
+                <li>Go there</li>
+                <li>Go here</li>
+                <li>Stop for a coffee get a voucher <i>qr code here</i></li>
+            </ol>
         </form>
     </div>
 {% endblock %}
