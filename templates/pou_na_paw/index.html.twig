@@ -27,7 +27,7 @@
         <h1>Welcome to PouBus!</h1></br>
 
 
-        <form class="locations" action="locations.php" method="post">
+        <form class="locations" method="post">
             <div class="form-group">
                 <label>Starting Point</label>
                 <input type="text" class="form-control"name="start" placeholder="Give Starting Point"/>
@@ -60,6 +60,15 @@
                 <input type="text" class="form-control"name="start" placeholder="Give Destination">
             </div>
             <button type="submit" class="btn btn-default btn-primary">Submit</button>
+        </form>
+
+        <form class="locations">
+            <h3>Direction</h3>
+            <ol>
+                <li>Go there</li>
+                <li>Go here</li>
+                <li>Stop for a coffee get a voucher <i>qr code here</i></li>
+            </ol>
         </form>
     </div>
 {% endblock %}
